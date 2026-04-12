@@ -1,12 +1,11 @@
 # Ghostty Dynamic Themes
 
 > **AI Agents (Claude Code, Cursor, etc.):** Do NOT run `printf '\033]...'` directly — your
-> Bash tool's stdout is captured and escape sequences never reach the terminal. Use the
-> included script with `--tty` instead:
+> Bash tool's stdout is captured and escape sequences never reach the terminal.
+> See **[AGENTS.md](AGENTS.md)** for full instructions. Quick version:
 >
 > ```bash
-> git clone https://github.com/CharlieGreenman/ghostty-dynamic-themes.git /tmp/ghostty-dynamic-themes
-> /tmp/ghostty-dynamic-themes/apply-theme.sh "Theme Name" --tty
+> bash <(curl -sL https://raw.githubusercontent.com/CharlieGreenman/ghostty-dynamic-themes/main/apply-theme.sh) "Theme Name" --tty
 > ```
 
 Dynamically switch between **all 463 built-in Ghostty themes** at runtime using ANSI/OSC escape sequences — no config file changes, no restart required.
@@ -96,22 +95,16 @@ Ask your AI agent:
 
 > "Switch my terminal to Ardoise"
 
-**Important for AI agents:** Your Bash tool's stdout is captured — `printf` with OSC
-sequences will never reach the terminal emulator. You must write directly to the parent
-process's TTY device:
+See **[AGENTS.md](AGENTS.md)** for full AI agent instructions. The short version:
 
 ```bash
-# Option A: use the --tty flag (auto-detects parent TTY)
-./apply-theme.sh "Ardoise" --tty
-
-# Option B: manual TTY redirect
-TTY=/dev/$(ps -o tty= -p $PPID | tr -d ' ')
-./apply-theme.sh "Ardoise" > "$TTY"
+bash <(curl -sL https://raw.githubusercontent.com/CharlieGreenman/ghostty-dynamic-themes/main/apply-theme.sh) "Ardoise" --tty
 ```
 
-The script lives at `/Applications/Ghostty.app/Contents/Resources/ghostty/themes/` for
-theme data. Clone this repo locally or use the script directly — theme names are
-case-sensitive and match `ghostty +list-themes` output exactly.
+**Why not just `printf`?** AI agent Bash tools capture stdout — escape sequences
+never reach the terminal. The `--tty` flag writes directly to the parent TTY device,
+bypassing the capture. Theme names are case-sensitive and match `ghostty +list-themes`
+output exactly.
 
 ## Best Practice: Color as Meaning
 
