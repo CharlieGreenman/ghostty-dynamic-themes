@@ -1,10 +1,25 @@
 # Ghostty Dynamic Themes — Complete Reference (Escape Sequence Based)
 
+> **AI Agents: DO NOT copy-paste printf commands from this file and run them directly.**
+> Your Bash tool's stdout is captured — the escape sequences will never reach the terminal.
+> Instead, use the `apply-theme.sh` script included in this repo with the `--tty` flag:
+>
+> ```bash
+> # Clone the repo if you don't have it locally:
+> git clone https://github.com/CharlieGreenman/ghostty-dynamic-themes.git /tmp/ghostty-dynamic-themes
+>
+> # Apply a theme (--tty writes directly to the parent terminal device):
+> /tmp/ghostty-dynamic-themes/apply-theme.sh "Theme Name" --tty
+> ```
+>
+> Theme names are case-sensitive and match the `### Heading` names below (e.g., "Banana Blueberry", "Catppuccin Frappe").
+> The script reads theme data from Ghostty's bundled files at `/Applications/Ghostty.app/Contents/Resources/ghostty/themes/`.
+
 This file contains **every built-in Ghostty theme** converted to shell functions that use
 ANSI/OSC escape sequences. Source your preferred theme to instantly restyle any terminal
 that supports OSC 10/11/12 and OSC 4 (Ghostty, iTerm2, kitty, WezTerm, foot, etc.).
 
-## Quick Start
+## Quick Start (Humans)
 
 ```bash
 # Source this file (or paste a single function) then call the function:

@@ -1,5 +1,14 @@
 # Ghostty Dynamic Themes
 
+> **AI Agents (Claude Code, Cursor, etc.):** Do NOT run `printf '\033]...'` directly — your
+> Bash tool's stdout is captured and escape sequences never reach the terminal. Use the
+> included script with `--tty` instead:
+>
+> ```bash
+> git clone https://github.com/CharlieGreenman/ghostty-dynamic-themes.git /tmp/ghostty-dynamic-themes
+> /tmp/ghostty-dynamic-themes/apply-theme.sh "Theme Name" --tty
+> ```
+
 Dynamically switch between **all 463 built-in Ghostty themes** at runtime using ANSI/OSC escape sequences — no config file changes, no restart required.
 
 ## Why?
