@@ -73,13 +73,28 @@ if [[ -n "$SSH_CONNECTION" ]]; then
 fi
 ```
 
-### 4. Use with an LLM
+### 4. Apply with the helper script
 
-Point your LLM (Claude, GPT, etc.) at `themes.md` as context. Then ask:
+```bash
+./apply-theme.sh "Catppuccin Frappe"
+./apply-theme.sh "Gruvbox Dark"
+./apply-theme.sh "Afterglow"
+```
+
+### 5. Use with an AI Agent (Claude Code, etc.)
+
+Ask your AI agent:
 
 > "Switch my terminal to Nord"
 
-The LLM can output the exact escape sequences or shell function to apply.
+The agent should run `apply-theme.sh` via the `!` prefix in Claude Code so the escape
+sequences reach the terminal directly:
+
+```
+! ./apply-theme.sh "Nord"
+```
+
+See `CLAUDE.md` for full AI agent integration instructions.
 
 ## Best Practice: Color as Meaning
 
