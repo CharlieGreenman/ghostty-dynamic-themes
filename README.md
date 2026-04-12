@@ -85,16 +85,24 @@ fi
 
 Ask your AI agent:
 
-> "Switch my terminal to Nord"
+> "Switch my terminal to Ardoise"
 
-The agent should run `apply-theme.sh` via the `!` prefix in Claude Code so the escape
-sequences reach the terminal directly:
+**Important for AI agents:** Your Bash tool's stdout is captured — `printf` with OSC
+sequences will never reach the terminal emulator. You must write directly to the parent
+process's TTY device:
 
+```bash
+# Option A: use the --tty flag (auto-detects parent TTY)
+./apply-theme.sh "Ardoise" --tty
+
+# Option B: manual TTY redirect
+TTY=/dev/$(ps -o tty= -p $PPID | tr -d ' ')
+./apply-theme.sh "Ardoise" > "$TTY"
 ```
-! ./apply-theme.sh "Nord"
-```
 
-See `CLAUDE.md` for full AI agent integration instructions.
+The script lives at `/Applications/Ghostty.app/Contents/Resources/ghostty/themes/` for
+theme data. Clone this repo locally or use the script directly — theme names are
+case-sensitive and match `ghostty +list-themes` output exactly.
 
 ## Best Practice: Color as Meaning
 

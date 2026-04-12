@@ -29,11 +29,10 @@ while IFS= read -r line; do
 done < "$THEMES_DIR/Theme Name"
 ```
 
-Or use the helper script with TTY redirection:
+Or use the helper script's built-in `--tty` flag:
 
 ```bash
-TTY=/dev/$(ps -o tty= -p $PPID | tr -d ' ')
-./apply-theme.sh "Theme Name" > $TTY
+./apply-theme.sh "Theme Name" --tty
 ```
 
 ### What does NOT work from the Bash tool
