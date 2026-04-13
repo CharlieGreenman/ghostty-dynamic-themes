@@ -89,7 +89,22 @@ fi
 ./apply-theme.sh "Afterglow"
 ```
 
-### 5. Use with an AI Agent (Claude Code, etc.)
+### 5. Install as a Claude Code Plugin
+
+Add the marketplace and install the plugin:
+
+```bash
+/plugin marketplace add CharlieGreenman/ghostty-dynamic-themes
+/plugin install ghostty-dynamic-themes@ghostty-plugins
+```
+
+Once installed:
+
+- A **random theme is applied automatically** every time you start a Claude Code session
+- `/ghostty-dynamic-themes:apply-theme Catppuccin Frappe` — apply a specific theme
+- `/ghostty-dynamic-themes:random-theme` — switch to a random theme
+
+### 6. Use with an AI Agent (Claude Code, etc.)
 
 Ask your AI agent:
 
