@@ -13,7 +13,7 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 if [ -n "$ARGUMENTS" ]; then
   THEME="$ARGUMENTS"
 else
-  THEME="$(grep '^- ' "$REPO_ROOT/themes.md" | sed 's/^- //' | shuf -n 1)"
+  THEME="$(grep '^- ' "$REPO_ROOT/themes.md" | sed 's/^- //' | awk 'BEGIN{srand()}{a[NR]=$0}END{print a[int(rand()*NR)+1]}')"
 fi
 bash "$REPO_ROOT/apply-theme.sh" "$THEME" --tty
 ```
