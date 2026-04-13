@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$(git rev-parse --show-toplevel)/apply-theme.sh\" \"$(grep '^- ' \"$(git rev-parse --show-toplevel)/themes.md\" | sed 's/^- //' | shuf -n 1)\" --tty",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
