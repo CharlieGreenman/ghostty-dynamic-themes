@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$(git rev-parse --show-toplevel)/apply-theme.sh\" \"$(grep '^- ' \"$(git rev-parse --show-toplevel)/themes.md\" | sed 's/^- //' | shuf -n 1)\" --tty",
+            "command": "bash \"$(git rev-parse --show-toplevel)/apply-theme.sh\" \"$(grep '^- ' \"$(git rev-parse --show-toplevel)/themes.md\" | sed 's/^- //' | awk 'BEGIN{srand()} {a[NR]=$0} END{print a[int(rand()*NR)+1]}')\" --tty",
             "timeout": 30
           }
         ]

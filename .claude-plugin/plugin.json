@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "THEME=$(grep '^- ' \"${CLAUDE_PLUGIN_ROOT}/themes.md\" | sed 's/^- //' | shuf -n 1) && bash \"${CLAUDE_PLUGIN_ROOT}/scripts/apply-theme.sh\" \"$THEME\" --tty && echo \"Applied Ghostty theme: $THEME\"",
+            "command": "THEME=$(grep '^- ' \"${CLAUDE_PLUGIN_ROOT}/themes.md\" | sed 's/^- //' | awk 'BEGIN{srand()} {a[NR]=$0} END{print a[int(rand()*NR)+1]}') && bash \"${CLAUDE_PLUGIN_ROOT}/scripts/apply-theme.sh\" \"$THEME\" --tty && echo \"Applied Ghostty theme: $THEME\"",
             "timeout": 30
           }
         ]
