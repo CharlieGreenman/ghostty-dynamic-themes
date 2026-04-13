@@ -91,11 +91,10 @@ fi
 
 ### 5. Install as a Claude Code Plugin
 
-Add the marketplace and install the plugin:
+Install directly from GitHub:
 
 ```bash
-/plugin marketplace add CharlieGreenman/ghostty-dynamic-themes
-/plugin install ghostty-dynamic-themes@ghostty-plugins
+/plugin install github:CharlieGreenman/ghostty-dynamic-themes
 ```
 
 Once installed:
