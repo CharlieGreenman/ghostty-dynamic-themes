@@ -10,6 +10,10 @@
 
 Dynamically switch between **all 463 built-in Ghostty themes** at runtime using ANSI/OSC escape sequences — no config file changes, no restart required.
 
+<img width="3578" height="2012" alt="Screenshot 2026-04-14 at 7 37 39 AM" src="https://github.com/user-attachments/assets/11dd37f7-901b-4d87-8c5b-89472f641bf7" />
+<img width="1774" height="1081" alt="Screenshot 2026-04-14 at 7 37 13 AM" src="https://github.com/user-attachments/assets/654513ce-91d3-42fd-a95b-f9c732b5eb08" />
+
+
 ## Why?
 
 Ghostty doesn't support per-tab theming. This repo turns **your shell into the theme engine** by setting colors via escape sequences. This means you can:
