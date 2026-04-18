@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Ghostty terminal theme plugins for Claude Code",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "plugins": [
     {
@@ -16,7 +16,7 @@
         "url": "https://github.com/CharlieGreenman/ghostty-dynamic-themes.git"
       },
       "description": "Apply any of Ghostty's 463 built-in themes dynamically — no config changes, no restart",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "terminal",
       "tags": ["ghostty", "themes", "terminal-customization", "osc"],
       "homepage": "https://github.com/CharlieGreenman/ghostty-dynamic-themes"
